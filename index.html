@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        border-radius: 4px;
+      }
+
+      main {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        /* background-color: red; */
+        width: 70%;
+        padding: 2rem;
+        box-shadow: 1px 1px 15px 0px rgb(211, 211, 211);
+        border-radius: 4px;
+        display: flex;
+      }
+      .left,
+      .right {
+        width: 50%;
+      }
+      .left {
+        display: flex;
+        flex-direction: column;
+        /* gap: 2rem; */
+        padding-right: 1rem;
+        border-right: 1px solid rgb(211, 211, 211);
+        border-radius: 0;
+      }
+
+      .component {
+        display: flex;
+        gap: 20px;
+        /* border: 1px solid rgb(213, 212, 212); */
+        padding: 1rem;
+        border-radius: 4px;
+      }
+
+      .productDesc {
+        padding-top: 0.5rem;
+        width: 60%;
+      }
+      .cartImage {
+        width: 100px;
+        border-radius: 4px;
+        box-shadow: 1px 1px 15px 0px rgb(213, 213, 213);
+      }
+      .cartHeading {
+        margin-bottom: 1rem;
+        font-size: 14px;
+        /* letter-spacing: 5; */
+      }
+
+      .cartSize,
+      .cartColor {
+        font-size: 12px;
+        color: grey;
+        margin-bottom: 0.2rem;
+      }
+
+      .quantity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: 4rem;
+        margin-bottom: 2rem;
+      }
+      .cartQuantity {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+      .minus,
+      .plus {
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 1px solid grey;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* padding: 3px 4px; */
+      }
+
+      .minus:hover,
+      .plus:hover {
+        background-color: rgb(211, 211, 211);
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+        /* justify-content: center; */
+        flex-direction: column;
+
+        /* background-color: aliceblue; */
+      }
+      .cart {
+        /* background-color: aqua; */
+        height: 80%;
+        width: 90%;
+      }
+
+      .cart > h2 {
+        background-color: rgb(215, 215, 215);
+        text-align: center;
+        margin-bottom: 1rem;
+        padding: 0.7rem 0;
+        /* box-shadow: 1px 1px 15px 0px rgb(211, 211, 211); */
+      }
+      .products {
+        width: 100%;
+        /* border: 1px solid rgb(211, 211, 211); */
+        height: 100%;
+        /* padding: 2rem; */
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .product {
+        box-shadow: 1px 1px 15px 0px rgb(211, 211, 211);
+        /* border: 1px solid rgb(211, 211, 211); */
+        padding: 1rem 2rem;
+        width: 100%;
+        display: none;
+
+        gap: 4rem;
+      }
+      .productsImage {
+        width: 60px;
+        /* height: 200px; */
+      }
+      .desc {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+      }
+      .desc h3 {
+        font-size: 16px;
+      }
+      .total {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 0.7rem;
+      }
+      .amount {
+        font-size: 14px;
+      }
+      span {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="left">
+          <div class="component">
+            <img src="/Images/shopping (1).webp" class="cartImage" alt="" />
+            <div class="productDesc">
+              <h4 class="cartHeading">Sophiticated dress</h4>
+              <p class="cartSize">Size : S</p>
+              <p class="cartColor">Color : Blue</p>
+            </div>
+            <div class="quantity">
+              <div class="cartQuantity">
+                <span class="minus">-</span>
+                <span class="count">0</span>
+                <span class="plus">+</span>
+              </div>
+              <div class="cartPrice">100</div>
+            </div>
+          </div>
+          <div class="component">
+            <img src="/Images/shopping.webp" class="cartImage" alt="" />
+            <div class="productDesc">
+              <h4 class="cartHeading">Fashionable Coat</h4>
+              <p class="cartSize">Size : S</p>
+              <p class="cartColor">Color : Brown</p>
+            </div>
+            <div class="quantity">
+              <div class="cartQuantity">
+                <span class="minus">-</span>
+                <span class="count">0</span>
+                <span class="plus">+</span>
+              </div>
+              <div class="cartPrice">200</div>
+            </div>
+          </div>
+          <div class="component">
+            <img src="/Images/download.jpeg" class="cartImage" alt="" />
+            <div class="productDesc">
+              <h4 class="cartHeading">Skirt Dress</h4>
+              <p class="cartSize">Size : S</p>
+              <p class="cartColor">Color : Black</p>
+            </div>
+            <div class="quantity">
+              <div class="cartQuantity">
+                <span class="minus">-</span>
+                <span class="count">0</span>
+                <span class="plus">+</span>
+              </div>
+              <div class="cartPrice">300</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="cart">
+            <h2>Total Amount</h2>
+
+            <div class="products">
+              <div class="product">
+                <img
+                  class="productsImage"
+                  src="/Images/shopping (1).webp"
+                  alt=""
+                />
+                <div class="desc">
+                  <h4>Sophiticated dress</h4>
+                  <div class="totalProductValue">
+                    <span class="qty">1</span> * 100
+                  </div>
+                </div>
+              </div>
+              <div class="product">
+                <img class="productsImage" src="/Images/shopping.webp" alt="" />
+                <div class="desc">
+                  <h4>Fashionable Coat</h4>
+                  <div class="totalProductValue">
+                    <span class="qty">1</span> * 200
+                  </div>
+                </div>
+              </div>
+              <div class="product">
+                <img class="productsImage" src="/Images/download.jpeg" alt="" />
+                <div class="desc">
+                  <h4>Skirt Dress</h4>
+                  <div class="totalProductValue">
+                    <span class="qty">1</span> * 300
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="total">
+              <h4>Total Amount :</h4>
+              <span>Rs <span class="amount">0</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
